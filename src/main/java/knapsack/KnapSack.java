@@ -34,7 +34,7 @@ public class KnapSack {
         while (true) {
             //System.out.println("in calculateGreedeMostValuable:");
             int pos=-1; int bestUse = 0;
-            for (int i=0; i<items.length; i++)
+            for (int i=0; i<items.length; i++) {
                 if (selected[i] == false &&
                         items[i].value > bestUse &&
                         getWeight() + items[i].weight <=
@@ -42,6 +42,7 @@ public class KnapSack {
                     bestUse = items[i].value;
                     pos = i;
                 }
+            }
             if (pos == -1) break;
             else selected[pos] = true;
         }
